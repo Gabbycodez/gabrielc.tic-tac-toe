@@ -1,0 +1,124 @@
+:root {
+    --roblox-red: #E2231A;
+    --roblox-black: #1F1F1F;
+}
+
+body {
+    background-color: #232527;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.game-container {
+    background-color: var(--roblox-black);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(226, 35, 26, 0.3);
+}
+
+.directions {
+    background-color: var(--roblox-black);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(226, 35, 26, 0.3);
+}
+
+.directions h2 {
+    color: var(--roblox-red);
+    margin-bottom: 10px;
+}
+
+.directions ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.directions li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.title {
+    color: var(--roblox-red);
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: #2E2E2E;
+    border: 2px solid var(--roblox-red);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cell:hover {
+    background: #3E3E3E;
+    transform: scale(1.05);
+}
+
+.cell.X, .cell.O {
+    cursor: not-allowed;
+}
+
+.status {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.reset-btn {
+    background-color: var(--roblox-red);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    transform: scale(1.1);
+    background-color: #ff2e24;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.symbol {
+    font-size: 60px;
+    animation: pop 0.3s ease-out;
+}
+
+.X .symbol {
+    color: var(--roblox-red);
+}
+
+.O .symbol {
+    color: #00b2ff;
+}
