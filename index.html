@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabby's Tic-Tac-Toe vs Computer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="directions">
+        <h2>How to Play</h2>
+        <ul>
+            <li>📍 You are X and the computer is O</li>
+            <li>🎮 Click any empty square to place your X</li>
+            <li>🎯 Get three X's in a row (horizontally, vertically, or diagonally) to win</li>
+            <li>🤖 The computer will automatically make its move after you</li>
+            <li>🔄 Click "Play Again" at any time to restart the game</li>
+        </ul>
+    </div>
+
+    <div class="game-container">
+        <h1 class="title">Gabby's Tic-Tac-Toe vs AI</h1>
+        <div class="status" id="status">Your Turn (X)</div>
+        <div class="board" id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+        <button class="reset-btn" id="resetButton">Play Again</button>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
