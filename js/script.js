@@ -21,6 +21,7 @@ function handleClick(e) {
     
     if (!gameActive) return;
     
+    // Computer's turn
     setTimeout(() => {
         computerMove();
     }, 500);
@@ -49,23 +50,27 @@ function makeMove(cellIndex, player) {
 function computerMove() {
     if (!gameActive) return;
 
+    // Try to win
     const winningMove = findBestMove('O');
     if (winningMove !== -1) {
         makeMove(winningMove, 'O');
         return;
     }
 
+    // Block player's winning move
     const blockingMove = findBestMove('X');
     if (blockingMove !== -1) {
         makeMove(blockingMove, 'O');
         return;
     }
 
+    // Take center if available
     if (gameState[4] === '') {
         makeMove(4, 'O');
         return;
     }
 
+    // Take random available corner
     const corners = [0, 2, 6, 8];
     const availableCorners = corners.filter(i => gameState[i] === '');
     if (availableCorners.length > 0) {
@@ -74,6 +79,7 @@ function computerMove() {
         return;
     }
 
+    // Take any available space
     const emptySpaces = gameState.map((cell, index) => cell === '' ? index : null).filter(val => val !== null);
     if (emptySpaces.length > 0) {
         const randomSpace = emptySpaces[Math.floor(Math.random() * emptySpaces.length)];
@@ -126,3 +132,5 @@ cells.forEach(cell => {
         cell.style.transform = 'scale(1)';
     });
 });
+
+resetButton.addEventListener('click', resetGame);
