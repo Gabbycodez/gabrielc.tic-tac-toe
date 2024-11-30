@@ -114,4 +114,15 @@ function resetGame() {
     });
 }
 
-cells.for
+cells.forEach(cell => {
+    cell.addEventListener('click', handleClick);
+    
+    cell.addEventListener('mouseover', () => {
+        if (cell.classList.contains('X') || cell.classList.contains('O')) return;
+        cell.style.transform = 'scale(1.05)';
+    });
+
+    cell.addEventListener('mouseout', () => {
+        cell.style.transform = 'scale(1)';
+    });
+});
