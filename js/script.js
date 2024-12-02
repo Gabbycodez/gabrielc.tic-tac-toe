@@ -57,13 +57,6 @@ function computerMove() {
         return;
     }
 
-    // Block player's winning move
-    const blockingMove = findBestMove('X');
-    if (blockingMove !== -1) {
-        makeMove(blockingMove, 'O');
-        return;
-    }
-
     // Take center if available
     if (gameState[4] === '') {
         makeMove(4, 'O');
